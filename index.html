@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Password check</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Password Check</h1>
+    <hr>
+
+    <div class="d-flex justify-content-center ">
+        <form method="post" id="getcredentialsform" class="border p-3 shadow">
+            <label for="username">User Name</label>
+            <input class="form-control" type="text" name="username" placeholder="enter your name" id="usernameinput">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" placeholder="password" name="userpassword"
+                id="userpasswordinput">
+
+            <button class="btn btn-primary mt-3" id="getinfobutton">Submit </button>
+            <!--need to change button behavior-->
+
+
+
+
+
+        </form>
+    </div>
+
+    <script>
+
+        document.getElementById("getinfobutton").addEventListener("click", (e) => {
+            e.preventDefault();
+
+            console.log("you pressed button");
+
+            let userName = document.getElementById("usernameinput").value;
+            let userPassword = document.getElementById("userpasswordinput").value;
+
+            console.log(userName);
+            console.log(userPassword);
+
+            //if entry is empty 
+
+            if (!userName || !userPassword) {
+                alert("Provide a valid pass and username")
+
+            } else if (userName === "admin" && userPassword === "1234") {
+                alert("correct you will redirect to main page");
+                window.location.href = "/adminpage";
+            } else if (userName === "user" && userPassword === "1111") {
+                window.location.href = "/userpage";
+
+            } else {
+                alert("invalid credentials ")
+            }
+
+
+
+        })
+
+
+    </script>
+
+</body>
+
+
+</html>

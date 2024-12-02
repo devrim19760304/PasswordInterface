@@ -1,0 +1,13 @@
+body {
+    padding-top: 10px;
+  }
+  h1 {
+    text-align: center;
+  }
+  
+  #getcredentialsform {
+    width: 400px;
+    height: auto;
+    border-radius: 5px;
+  }
+  
